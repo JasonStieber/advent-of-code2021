@@ -25,12 +25,12 @@ func main() {
 				if chkSolution(bds[i][j]) {
 					winner = bds[i]
 					lastNum = b
-					break
+					bds[i] = board{}
 				}
 			}
 		}
 		if (winner != board{}) {
-			break
+			// do nothing
 		}
 	}
 	filtered := fillter(winner)
