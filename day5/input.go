@@ -8,6 +8,19 @@ type line struct {
 	start, end cord
 }
 
+var example = []line{
+	{cord{0, 9}, cord{5, 9}},
+	{cord{8, 0}, cord{0, 8}},
+	{cord{9, 4}, cord{3, 4}},
+	{cord{2, 2}, cord{2, 1}},
+	{cord{7, 0}, cord{7, 4}},
+	{cord{6, 4}, cord{2, 0}},
+	{cord{0, 9}, cord{2, 9}},
+	{cord{3, 4}, cord{1, 4}},
+	{cord{0, 0}, cord{8, 8}},
+	{cord{5, 5}, cord{8, 2}},
+}
+
 var lines = []line{
 	{cord{419, 207}, cord{419, 109}},
 	{cord{300, 888}, cord{803, 385}},
