@@ -6,8 +6,11 @@ func main() {
 	time := 80
 	b := placeIntoArray(fish)
 	nb := passTime(time, b)
+	tnb := passTime(256, b)
 	total := sumBucket(nb)
-	log.Printf("The answer to Part is is:%v fish after %v days", total, time)
+	total2 := sumBucket(tnb)
+	log.Printf("The answer to Part A is is:%v fish after %v days", total, time)
+	log.Panicf("The answer to Part B is is:%v fish after %v days", total2, 256)
 }
 
 func sumBucket(b [9]int) int {
