@@ -3,13 +3,13 @@ package main
 import "log"
 
 func main() {
-	steps := testEachSlot(input)
-	sumStep := testEachSumSlot(input)
+	steps := minDistance(input)
+	sumStep := minSumDistance(input)
 	log.Printf("The answer to Part A is: %v", steps)
 	log.Printf("The answer to part B is: %v", sumStep)
 }
 
-func testEachSumSlot(set []int) int {
+func minSumDistance(set []int) int {
 	fewestSteps := 0
 	for i := 0; i < len(set); i++ {
 		steps := totalSumSteps(i, set)
@@ -23,7 +23,7 @@ func testEachSumSlot(set []int) int {
 	return -1
 }
 
-func testEachSlot(set []int) int {
+func minDistance(set []int) int {
 	fewestSteps := 0
 	for i := 0; i < len(set); i++ {
 		steps := totalSteps(i, set)
@@ -61,5 +61,8 @@ func totalSteps(target int, set []int) int {
 }
 
 func sumToN(n int) int {
+	if n < 0 {
+		log.Panicf("Expected a non negtive number got got %v", n)
+	}
 	return (n * (n + 1)) / 2
 }
